@@ -1,0 +1,10 @@
+<div class="studyElementHeader">
+	<h3 class="studyAreaName">
+		{{actualArea.name}}
+	</h3>
+</div>
+<div class="studyListContainer">
+	<ul class="studiesList">
+		<study-item *ngFor="let itm of studies" [myStudy]="itm"></study-item>
+	</ul>
+</div>

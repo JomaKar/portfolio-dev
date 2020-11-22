@@ -1,0 +1,48 @@
+<li class="skillItm">
+
+	<div class="skillRepresentationContainer">
+		<span *ngIf="skill.symbolType == 'css class'" class="skillSymbolContainer">
+			<i [class]="skill.symbol" aria-hidden="true"></i>
+		</span>
+			
+		<span *ngIf="skill.symbolType == 'svg'" [innerHtml]="skill.symbol | safeHtml"  class="skillSymbolContainer">
+		</span>
+
+		<span *ngIf="skill.symbolType == 'img'"  class="skillSymbolContainer">
+			<img [src]="skill.symbol">
+		</span>
+
+
+		<span class="skillName">{{skill.name}}</span>
+	</div>
+
+	<div class="skillLevelContainer">
+		
+		<span *ngIf="skill.confidence == 1" class="confidenceWord">Starter</span>
+		<span *ngIf="skill.confidence == 1" class="confidenceIcon">
+			<basic-level-icon></basic-level-icon>
+		</span>
+
+		<span *ngIf="skill.confidence == 2" class="confidenceWord">Basic</span>
+		<span *ngIf="skill.confidence == 2" class="confidenceIcon">
+			<basic-medium-level-icon></basic-medium-level-icon>
+		</span>
+
+		<span *ngIf="skill.confidence == 3" class="confidenceWord">Intermedium</span>
+		<span *ngIf="skill.confidence == 3" class="confidenceIcon">
+			<medium-level-icon></medium-level-icon>
+		</span>
+
+		<span *ngIf="skill.confidence == 4" class="confidenceWord">Advanced</span>
+		<span *ngIf="skill.confidence == 4" class="confidenceIcon">
+			<medium-height-level-icon></medium-height-level-icon>
+		</span>
+
+		<span *ngIf="skill.confidence == 5" class="confidenceWord">Pro</span>
+		<span *ngIf="skill.confidence == 5" class="confidenceIcon">
+			<height-level-icon></height-level-icon>
+		</span>
+
+	</div>
+
+</li>

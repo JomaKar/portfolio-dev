@@ -1,0 +1,49 @@
+<div *ngIf="actualStudy" class="studyElementContainer">
+
+	<div class="modalBlackLayer" (click)="goBack()"></div>
+
+	<div class="modalElement">
+
+		<span (click)="goBack()" class="closeSpan">
+			<span class="fa fa-times"></span>
+		</span>
+			
+		<div class="InfoContainer">
+
+			<div class="courseImg backImg" [ngStyle]="{'background-image': 'url(' + srcStamp + actualStudy.courseImgPath + ')'}">
+				<span class="certificateShowBtn" *ngIf="actualStudy.certificateAvailable > 0" (click)="showCertificate()" >See Certificate</span>
+			</div>
+			
+			<div class="studyInfoContainer">
+				<div class="institutionLogoDiv">
+					<a [href]="actualStudy.institutionURLPath" target="_blank">
+						<span [ngStyle]="{'background-image': 'url(' + srcStamp + actualStudy.institutionImgPath + ')'}" class="institutionLogo backImg"></span>
+					</a>
+				</div>
+				<h1 class="studyTitle">
+					{{actualStudy.title}}					
+				</h1>
+				<h3 class="studySubject">
+					{{actualStudy.subject}}
+				</h3>
+				<p class="teacherInfo" *ngIf="actualStudy.teacher">
+					Teacher: {{actualStudy.teacher}}
+				</p>
+				<a [href]="actualStudy.coursePath" class="courseAnchor anchorCustom" target="_blank">
+					{{actualStudy.coursePath}}
+				</a>
+			</div>
+
+		</div>
+
+		<div *ngIf="actualStudy.certificateAvailable > 0" class="certificateContainer" #certificateElement>
+			<div class="backContainer" (click)="hideCertificate()" >
+				<span class="goBackSpan fa fa-chevron-left"></span>
+				Back
+			</div>
+			<div class="certificate" [ngStyle]="{'background-image': 'url(' + srcStamp + actualStudy.certificateImgPath + ')'}"></div>
+		</div>
+
+	</div>
+	
+</div>

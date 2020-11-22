@@ -1,0 +1,79 @@
+
+<h1 class="subPageTitle">So you are interested...</h1>
+
+
+<p class="subPageComment">
+	I'm glad you are here to see what I can do. Here I show a list of my skills on the web development field, what I put here it is because I can offer a quality work with it. However, I also add an estimation of how confortable I feel with each technology, to be more honest.
+</p>
+
+
+<div *ngIf="skillCategories.length > 0" class="subPageContainer">
+	
+	<div *ngFor="let field of skillCategories; let i = index" class="col-xs-12 col-sm-4 categorieElement" [ngClass]="field.name" [locatingOnThreeGrid]="i">
+
+		<div class="categorieHeader">
+			<span class="catName">{{field.name}}</span>
+
+			<span *ngIf="field.iconType == 'css class'" class="iconContainer">
+				<i [class]="field.icon" aria-hidden="true"></i>
+			</span>
+				
+			<span *ngIf="field.iconType == 'svg'"  class="iconContainer">
+				{{field.icon}}
+			</span>
+
+			<span *ngIf="field.iconType == 'img'"  class="iconContainer">
+				<img [src]="field.icon">
+			</span>
+
+		</div>
+
+		<div class="categorieBodyList">
+			<skill-list [fieldId]="field.id"></skill-list>	
+		</div>
+
+	</div>
+
+
+	<!-- alternative way on process -->
+	<!-- <div class="categorieElement col-xs-12 col-sm-4 leftOnGrid">
+		
+	</div>
+
+	<div class="categorieElement col-xs-12 col-sm-4 centerOnGrid">
+		
+	</div>
+
+	<div class="categorieElement col-xs-12 col-sm-4 rightOnGrid">
+		
+	</div>
+
+		
+	<div *ngFor="let field of skillCategories; let i = index" [ngClass]="[field.name, 'col-xs-12', 'noPadding', 'skillColumn']" [locatingOnGrid]="i">
+
+			<div class="categorieHeader">
+				<span class="catName">{{field.name}}</span>
+
+				<span *ngIf="field.iconType == 'css class'" class="iconContainer">
+					<i [class]="field.icon" aria-hidden="true"></i>
+				</span>
+					
+				<span *ngIf="field.iconType == 'svg'"  class="iconContainer">
+					{{field.icon}}
+				</span>
+
+				<span *ngIf="field.iconType == 'img'"  class="iconContainer">
+					<img [src]="field.icon">
+				</span>
+
+			</div>
+
+			<div class="categorieBodyList">
+				<skill-list [fieldId]="field.id"></skill-list>	
+			</div>
+
+	</div>
+ -->
+	<div style="clear: both;"></div>
+
+</div>

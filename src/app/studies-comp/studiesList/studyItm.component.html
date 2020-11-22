@@ -1,0 +1,19 @@
+<li class="studyItm">
+	<a [href]="myStudy.id" (click)="goToStudy($event, myStudy.id)" class="wrapperLink anchorCustom">
+		<div class="studyAbstractDiv">
+			<a [href]="myStudy.coursePath" (click)="blankLinkOn = true" target="_blank" class="studyTitle anchorCustom">
+				{{myStudy.title}}
+			</a>
+			<span class="clickSpan">
+				More info!
+			</span>
+			<a [href]="myStudy.institutionURLPath" (click)="blankLinkOn = true" target="_blank" class="studyInstitution anchorCustom">
+				<span class="institutionName" [title]="myStudy.institutionURLPath">
+					{{myStudy.institution}}
+				</span>
+				<span class="institutionIcon" [ngStyle]="{'background-image': 'url(' + myStudy.institutionImgPath + ')'}"></span>
+			</a>
+		</div>
+		<hr class="studyLine">
+	</a>
+</li>

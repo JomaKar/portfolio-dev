@@ -1,0 +1,22 @@
+<header class="landingHeader">
+	<div class="headerImg backImg" [ngStyle]="{'background-image': 'url(' + srcStamp + welcomeHeaderImg + ')'}" ></div>
+	
+	<div class="myImg backImg" *ngIf="infoAvailable" [ngStyle]="{'background-image': 'url(' + srcStamp + actualPhoto + ')'}" ></div>
+
+	<h1 class="welcomeTitle"> {{welcomeTitle}} </h1>
+	<div class="blackLayer"></div>
+</header>
+
+<div class="myResume">
+	<ul class="noPadding noMargin basicInfoList" *ngIf="infoAvailable">
+		<li>My name is {{myInfo.name}}. </li>
+		<li>
+			I was born {{myInfo.age}} years ago in {{myInfo.birth_place}}, {{myInfo.birth_country}}. On {{myInfo.birth_year}}.
+		</li>
+		<li>
+			Since some years I've been working as a {{myInfo.occupation}}
+		</li>
+	</ul>
+</div>
+
+<projects-jmchema></projects-jmchema>

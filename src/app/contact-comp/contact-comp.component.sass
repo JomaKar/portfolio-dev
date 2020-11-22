@@ -1,0 +1,208 @@
+@import ../../colors
+	
+.normalList
+	list-style: none
+	margin: 20px 0 20px
+
+	li
+		.mailIcon
+			font-size: 16px
+			margin-right: 10px
+
+#myContactForm
+	margin-bottom: 40px
+
+	.basicInfoCont
+		.row
+			.nameCont, .mailCont
+				padding: 0 !important
+
+	.submitBtn
+		width: 100%
+		background-color: orange
+		padding: 10px
+		color: white
+		border-radius: 10px
+		font-size: 20px
+
+.labelStandard
+	color: red
+	font-size: 25px
+	font-weight: 400
+
+.platformsToFindMe
+	margin: 40px 0
+	display: flex
+	justify-content: center	
+
+	.mediaIconContainer
+		width: 48%
+		display: flex
+		flex-direction: column
+		text-align: center
+
+		.mediaIcon
+			width: 135px
+			height: 135px
+			border-radius: 50%
+			background-color: #771818
+			text-align: center
+			display: flex
+			flex-direction: column
+			justify-content: center
+			font-size: 4em
+			align-self: center
+			color: white
+
+		.iconAnchor
+			align-self: center
+			text-decoration: none
+			
+			&:hover
+				text-decoration: none
+
+			.mediaIcon
+				width: 135px
+				height: 135px
+				border-radius: 50%
+				background-color: #771818
+				text-align: center
+				display: flex
+				flex-direction: column
+				justify-content: center
+				font-size: 4em
+				align-self: center
+				color: white
+
+		.mediaName
+			width: 100%
+			text-align: center
+			font-size: 14px
+			margin: 15px 0
+			color: $redIcon
+
+			.mediaAnchor
+				text-decoration: none
+				color: inherit
+
+				&:hover, &:focus, &:visited
+					text-decoration: none
+					color: inherit
+
+.modalContainer
+	display: none
+	position: fixed
+	left: 0
+	top: 0
+	width: 100vw
+	height: 100vh
+	justify-content: center
+	flex-direction: column
+
+	&.showing
+		display: flex
+
+		.modalBlackBox
+			position: absolute
+			left: 0
+			top: 0
+			width: 100vw
+			height: 100vh
+			background-color: rgba(0,0,0, 0.4)
+			z-index: 2
+
+		.myModal
+			position: relative
+			display: flex
+			align-self: center
+			width: 60%
+			height: 30%
+			max-width: 400px
+			max-height: 350px
+			border: 1px #e8c725 solid
+			border-radius: 15px
+			text-align: center
+			font-size: 24px
+			box-sizing: inherit
+			z-index: 3
+
+			.crossCont
+				position: absolute
+				right: 7px
+				top: 7px
+				width: 30px
+				height: 30px
+				border-radius: 50%
+				color: white
+				font-size: 21.5px
+				cursor: pointer
+				z-index: 4
+
+			&.scss
+				background-color: #eefdfa
+
+				.crossCont
+					background-color:  #5f9ea0
+
+				.modalSccss
+					display: inline-flex
+					width: 80%
+					margin-left: 10%
+					align-self: center
+
+				.modalFail
+					display: none
+
+			&.noScss
+				background-color: #fdf3ee
+
+				.crossCont
+					background-color:  #fb9d5a
+
+				.modalSccss
+					display: none
+
+				.modalFail
+					display: inline-flex
+					width: 80%
+					margin-left: 10%
+					align-self: center
+
+
+@media(min-width: 560px)
+	.platformsToFindMe
+		.mediaIconContainer
+			width: 30%
+
+			.mediaIcon
+				width: 145px
+				height: 145px
+				font-size: 5em
+
+
+@media(min-width: 768px)
+	.platformsToFindMe
+		.mediaIconContainer
+			width: 18%
+
+			.mediaIcon
+				width: 128px
+				height: 128px
+
+
+	#myContactForm
+		.basicInfoCont
+			.row
+				.nameCont
+					padding-right: 7.5px !important
+
+				.mailCont
+					padding-left: 7.5px !important
+
+
+@media(min-width: 900px)
+	.platformsToFindMe
+		.mediaIconContainer
+			.mediaIcon
+				width: 150px !important
+				height: 150px !important

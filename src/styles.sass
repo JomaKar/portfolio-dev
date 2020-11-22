@@ -1,1 +1,192 @@
 /* You can add global styles to this file, and also import other style files */
+@import colors
+
+body
+	margin: 0 auto !important
+	font-family: Roboto, sans-serif !important
+	padding: 40px 0px 0
+	background-color: $bodyGray 
+	
+	.container-fluid
+		
+		&.headerTop
+			margin-top: 10px
+
+.anchorCustom
+	text-decoration: none
+
+	&:visited, &:hover, &:focus
+		text-decoration: none
+
+
+.conNav
+	margin-top: 50px
+
+.regularIcon
+	width: inherit
+	fill: inherit
+
+.distanceIcon
+	height: 20px !important
+	width: 20px !important
+
+.jaNeinIcon
+	font-size: 27px !important
+	color: inherit
+
+	&:hover
+		color: inherit	
+
+.spacerDiv
+	height: 40px
+	position: relative
+	top: 0
+	left: 0
+	width: 100vw
+	
+.hiddenItm
+	display: none !important
+	
+.noMxWidth
+	max-width: none !important
+	
+.noBrd
+	border: hidden !important
+	
+.btmBrd
+	border-bottom: 1px solid
+	
+.defaultPointer
+	cursor: default !important
+
+
+.form-control
+	&.myFormContr
+		background-color: transparent
+		border: hidden
+
+.myFormContr
+	background-color: transparent
+	border: hidden		
+
+.halfPadding
+	padding: 7.5px !important
+
+.noPadding
+	padding: 0px !important
+	&.half
+		padding: 0 7.5px 0 7.5px !important
+	&.butVertHalf
+		padding: 7.5px 0 !important
+		
+	&.butVertHalf13
+		padding: 6.5px 0 !important
+		
+.butVertHalf
+	padding: 7.5px 0 !important		
+
+.butVertHalf13
+	padding: 6.5px 0 !important
+
+.NoleftP
+	padding-left: 0 !important
+	&.halfR
+		padding-right: 7.5px !important
+			
+.NorightP
+	padding-right: 0 !important
+	&.halfL
+		padding-left: 7.5px !important
+
+
+.dblleftP
+	padding-left: 30px !important
+
+.dblrightP
+	padding-right: 30px !important
+
+.NotopP
+	padding-top: 0 !important
+.NobottomP
+	padding-bottom: 0 !important			
+
+.noMargin
+	margin-left: 0px !important
+	margin-right: 0px !important
+	margin-top: 0px !important
+	margin-bottom: 0px !important
+.NoleftM
+	margin-left: 0px !important
+	&.halfMR
+		margin-right: 7.5px !important
+.NorightM
+	margin-right: 0px !important
+	&.halfML
+		margin-left: 7.5px !important
+.NobottomM
+	margin-bottom: 0px !important
+.NotopM
+	margin-top: 0px !important		
+		
+.childHeight
+	overflow: auto	
+	
+
+.backImg
+	background-size: cover
+	background-position: center
+	background-clip: content-box
+	&.circ
+		border-radius: 50%
+		
+	&.backSz
+		background-size: 85%
+		background-repeat: no-repeat
+	
+	&.centerBackImg
+		background-position: center	
+
+
+
+@media(min-width 1200px)
+	.col-xs-12
+		&.noMoreGrow
+			width: 792px !important
+			margin: 0 auto !important
+			float: none !important
+			
+	.row-fluid
+		&.noMoreGrow
+			width: 792px !important
+			margin: 0 auto !important
+			float: none !important
+			
+			&.initialForms
+				width: 1164px !important
+
+
+.subPageTitle
+	font-size: 3em
+	color: $projectsSectionTitle
+	padding-left: 5%
+	margin: 40px 0 30px
+
+.subPageComment
+	font-size: 16px
+	padding-left: 5%
+	font-family: sans-serif
+	padding-right: 15px
+
+.subPageContainer
+	width: 100%
+	margin-top: 35px
+	padding-left: 5%
+	padding-right: 15px
+
+
+@media(min-width: 768px)
+	.subPageTitle
+		font-size: 3.5em
+
+	.subPageComment
+		font-size: 18px

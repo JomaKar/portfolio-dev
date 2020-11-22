@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark myNavBar">
+	<button class="navbar-toggler" type="button" (click)="displayMenu()" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<a routerLink="/projects" class="navbar-brand">
+		José
+	</a>
+	<div class="collapse navbar-collapse" id="navbarNav" #navbarMenu>
+		<ul class="nav navbar-nav navbar-right" #menuList>
+			<li class="navbar-item" (click)="displayMenu()">
+				<a class="nav-link" routerActiveLink="active" routerLink="/skills">Skills</a>
+			</li>
+			<li class="navbar-item" (click)="displayMenu()">
+				<a class="nav-link" routerActiveLink="active" routerLink="/studies">Studies</a>
+			</li>
+			<li class="navbar-item" (click)="displayMenu()">
+				<a class="nav-link" routerActiveLink="active" routerLink="/cv">CV</a>
+			</li>
+			<li class="navbar-item" (click)="displayMenu()">
+				<a class="nav-link" routerActiveLink="active" routerLink="/moreAboutMe">More</a>
+			</li>
+			<li class="navbar-item" (click)="displayMenu()">
+				<a class="nav-link" routerActiveLink="active" routerLink="/contact">Contact</a>
+			</li>
+		</ul>
+	</div>
+</nav>

@@ -1,0 +1,81 @@
+@import ../../colors
+    
+.myInfoContainer
+	.hobbysOrInterestContainer
+		width: 100%
+		height: auto
+		margin: 40px 0
+
+		.extraInfoSubtitle
+			color: $studiesListHeaderBack
+			font-size: 30px
+			font-weight: 100
+			margin-bottom: 40px
+
+		.hobbyOrInterestItm
+			margin-bottom: 30px
+			float: left
+
+			&:hover
+				.iconCont
+					border: 7px solid $borderIconGreenBright
+					color: #BE5B5B
+
+				.itmName
+					color: $borderIconGreen
+
+			.iconCont
+				width: 100%
+				height: 85%
+				border-radius: 20px
+				border: 7px solid $borderIconGreen
+				color: $redIcon
+				padding: 9px
+				
+				.pleasentIconCont
+					font-size: 4em
+					height: 100%
+					display: flex
+					justify-content: center
+					text-align: center
+					flex-direction: column
+
+					::ng-deep svg, i
+						fill: currentColor
+						color: inherit
+
+					::ng-deep svg
+						width: auto
+						height: 100%
+
+			.itmName
+				width: 100%
+				color: #447764
+				text-align: center
+				font-size: 22px
+				margin-top: 5px
+
+@media(min-width: 450px)
+	.myInfoContainer
+		.hobbysOrInterestContainer
+			margin-left: -15px
+
+			.extraInfoSubtitle
+				margin-left: 15px
+
+			.hobbyOrInterestItm
+				.iconCont
+					padding: 15px
+					
+					.pleasentIconCont
+						font-size: 6em
+
+@media(min-width: 768px)
+	.myInfoContainer
+		.hobbysOrInterestContainer
+			.hobbyOrInterestItm
+				.iconCont
+					padding: 13px
+					
+					.pleasentIconCont
+						font-size: 5em

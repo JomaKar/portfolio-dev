@@ -1,0 +1,114 @@
+<header class="landingHeader" *ngIf="infoAvailable">
+	<div class="headerImg backImg" [ngStyle]="{'background-image': 'url(' + srcStamp + welcomeHeaderImg + ')'}" ></div>
+	
+	<div class="myImg backImg" *ngIf="infoAvailable" [ngStyle]="{'background-image': 'url(' + srcStamp + actualPhoto + ')'}" ></div>
+</header>
+
+<h1 class="subPageTitle">
+	Ok, so finally here I'll tell you about me besides my wishes to work
+</h1>
+
+
+<p class="subPageComment">
+	I'm quite normal guy, with lots of dreams, sadly without the productivity and the speed I wish. I don't want you to get bored reading about me, so I'll try to say what I like in a glanz. Have fun.
+</p>
+
+
+<div *ngIf="infoAvailable" class="subPageContainer myInfoContainer">
+		
+		<div class="hobbysOrInterestContainer" *ngIf="aboutMe.hobbys">
+			<h3 class="extraInfoSubtitle">
+				These are my main hobbys:
+			</h3>
+
+			<div class="col-xs-6 col-sm-4 col-md-3 hobbyOrInterestItm" *ngFor="let hobby of aboutMe.hobbys; let i = index" [itemHeightGallery]="i">
+
+				<div class="iconCont">
+					<span *ngIf="hobby.iconType == 'css class'" class="pleasentIconCont">
+						<i [class]="hobby.icon" aria-hidden="true"></i>
+					</span>
+						
+					<span *ngIf="hobby.iconType == 'svg'" [innerHtml]="hobby.icon | safeHtml"  class="pleasentIconCont">
+					</span>
+
+					<span *ngIf="hobby.iconType == 'img'"  class="pleasentIconCont">
+						<img [src]="srcStamp + hobby.icon">
+					</span>				
+				</div>
+
+				<div class="itmName">
+					{{hobby.name}}
+				</div>
+
+			</div>
+
+			<div style="clear: both;"></div>
+		</div>
+
+
+		<!--  -->
+
+
+		<div class="hobbysOrInterestContainer" *ngIf="aboutMe.interests">
+			<h3 class="extraInfoSubtitle">
+				These are my main interests:
+			</h3>
+
+			<div class="col-xs-6 col-sm-4 col-md-3 hobbyOrInterestItm" *ngFor="let interest of aboutMe.interests; let i = index" [itemHeightGallery]="i">
+				
+				
+				<div class="iconCont">
+					<span *ngIf="interest.iconType == 'css class'" class="pleasentIconCont">
+						<i [class]="interest.icon" aria-hidden="true"></i>
+					</span>
+						
+					<span *ngIf="interest.iconType == 'svg'" [innerHtml]="interest.icon | safeHtml"  class="pleasentIconCont">
+					</span>
+
+					<span *ngIf="interest.iconType == 'img'"  class="pleasentIconCont">
+						<img [src]="interest.icon">
+					</span>				
+				</div>
+
+				<div class="itmName">
+					{{interest.name}}
+				</div>
+
+
+			</div>
+
+			<div style="clear: both;"></div>
+		</div>
+
+		<div class="hobbysOrInterestContainer" *ngIf="aboutMe.other_works">
+			<h3 class="extraInfoSubtitle">
+				Other things I'll be one day:
+			</h3>
+
+			<div class="col-xs-6 col-sm-4 col-md-3 hobbyOrInterestItm" *ngFor="let interest of aboutMe.other_works; let i = index" [itemHeightGallery]="i">
+				
+				
+				<div class="iconCont">
+					<span *ngIf="interest.iconType == 'css class'" class="pleasentIconCont">
+						<i [class]="interest.icon" aria-hidden="true"></i>
+					</span>
+						
+					<span *ngIf="interest.iconType == 'svg'" [innerHtml]="interest.icon | safeHtml"  class="pleasentIconCont">
+					</span>
+
+					<span *ngIf="interest.iconType == 'img'"  class="pleasentIconCont">
+						<img [src]="interest.icon">
+					</span>				
+				</div>
+
+				<div class="itmName">
+					{{interest.name}}
+				</div>
+
+
+			</div>
+
+			<div style="clear: both;"></div>
+		</div>
+
+</div>

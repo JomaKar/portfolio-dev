@@ -1,0 +1,52 @@
+<h1 class="subPageTitle">
+	About my professional development...
+</h1>
+
+
+<p class="subPageComment">
+	What haven't I sayed already?... aBasically I've worked on the area of web development, design and art. This portfolio is mainly designed for my profile as web developer, so I will just include what I have done on that field and what I consider relevant for it on my design and art career.
+	<br>
+	<b>You can also download my CV with the main info of this portfolio:</b>
+	<br>
+	<button (click)="downloadCV()" class="downloadBtn btn">
+		Download CV
+	</button>
+</p>
+
+
+<div *ngIf="infoAvailable" class="subPageContainer">
+	<div class="professionalFieldContainer" *ngFor="let field of cvInfo">
+		<h2 class="fieldTitle"> {{field.professional_area}} </h2>
+		
+		<ul class="noPadding noMargin experienceOnFieldDetails">
+			<li>
+				{{field.experience_level}} professional with {{field.experience_years}} years of experience in the {{field.professional_area}}
+			</li>
+		</ul>
+
+		<div class="workOnFieldContainer noPadding col-xs-12 col-sm-6" *ngFor="let work of field.works">
+			<div class="workImg backImg" [ngStyle]="{'background-image': 'url(' + srcStamp + work.enterprise_img + ')'}" ></div>
+
+			<div class="workInfoCont">
+				<a *ngIf="work.hasLink == 1" target="_blank" [href]="work.enterpriseLink" class="enterpriseName"> {{work.enterprise}} </a>
+				<h4 *ngIf="work.hasLink == 0" class="enterpriseName"> {{work.enterprise}} </h4>
+				
+				<p class="workData">
+					Role: {{work.role}}
+					<br>
+					Place: {{work.place}}
+					<br>
+					Start year: {{work.when}}
+					<br>
+					Time in the company: {{work.howLong}}
+					<br>
+					<span class="linkEnterprise" *ngIf="work.hasLink == 1">
+						Company website: {{work.enterpriseLink}}
+					</span>
+				</p>
+			</div>
+		</div>
+
+		<div style="clear: both;"></div>
+	</div>
+</div>

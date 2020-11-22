@@ -1,0 +1,128 @@
+<h1 class="subPageTitle">
+	Please feel free to contact me!
+</h1>
+
+
+<p class="subPageComment">
+	I almost forgot to put where to contact me! Wether you liked what you saw, you already knew my work or you have another kind of message, you can find me on the next platforms:
+</p>
+
+
+<div class="platformsToFindMe myResume" *ngIf="myMediaInfo.length > 1">
+		<div class="mediaIconContainer" *ngFor="let cItm of myMediaInfo">
+			<a *ngIf="cItm.hasUrl" class="iconAnchor" [href]="cItm.url" target="_blank">
+				<span class="mediaIcon" *ngIf="cItm.typeOfIcon == 'class'">
+					<i [class]="cItm.icon" aria-hidden="true"></i>
+				</span>
+			</a>
+			<span class="mediaIcon" *ngIf="!cItm.hasUrl">
+				<i [class]="cItm.icon" aria-hidden="true"></i>
+			</span>
+
+			<!-- ////// -->
+
+			<span class="mediaName" *ngIf="!cItm.hasUrl">
+				{{cItm.userName}}
+			</span>
+			<span class="mediaName" *ngIf="cItm.hasUrl">
+				<a [href]="cItm.url" target="_blank">
+					{{cItm.userName}}
+				</a>
+			</span>
+		</div>
+</div>
+
+
+<p class="subPageComment">
+	<b>Also you can send me a message here directly:</b>
+</p>
+
+<ul class="normalList subPageComment" *ngIf="myMailsInfo.length > 1">
+	<li *ngFor="let mailItm of myMailsInfo">
+		<span class="mailIcon">
+			<i [class]="mailItm.className" aria-hidden="true"></i>
+		</span>
+		<span class="mailName">
+			{{mailItm.mailTxt}}
+		</span>
+	</li>
+</ul>
+
+<p class="subPageComment noMargin">
+	<b>Or here, if you prefer:</b>
+</p>
+
+
+<div class="contactSec subPageContainer">
+
+	<form id="myContactForm" (ngSubmit)="onSubmit($event)" #contactForm="ngForm">
+
+		<div class="basicInfoCont col-xs-12 noPadding">
+			<div class="row noMargin">
+				<div class="form-group col-xs-12 col-sm-6 nameCont">
+					<label for="nameInput" class="labelStandard">
+						Your name:
+					</label>
+					<input required type="text" name="name" class="form-control" id="nameInput" placeholder="Name" [(ngModel)]="myMessage.name">
+				</div>
+
+				<div class="form-group col-xs-12 col-sm-6 mailCont">
+					<label for="formMail" class="labelStandard">
+						Your email:
+					</label>
+					<input required type="email" name="email" class="form-control" id="formMail" placeholder="Email" [(ngModel)]="myMessage.email">
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="reasonSelect" class="labelStandard">
+				Contact Reason:
+			</label>
+			<select required id="reasonSelect" class="form-control" name="reason" [(ngModel)]="myMessage.reason">
+				<option>
+					Make an appointment
+				</option>
+				<option>
+					Project Proposal
+				</option>
+				<option>
+					Suggestions
+				</option>
+				<option>
+					Complains
+				</option>
+				<option>
+					Other
+				</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label for="messageTxtArea" class="labelStandard">
+				Your Message:
+			</label>
+			<textarea required id="messageTxtArea" class="form-control" name="message" rows="3" [(ngModel)]="myMessage.message"></textarea>
+		</div>
+
+		<button type="submit" class="btn btn-default submitBtn" [disabled]="!contactForm.form.valid">
+			Submit
+		</button>
+
+	</form>
+
+</div>
+<div class="modalContainer" #modalPackage>
+	<div class="modalBlackBox" (click)="outOfModal()"></div>
+	<div class="myModal" #modal>
+		<span class="crossCont" (click)="outOfModal()">
+			<i class="fa fa-times"></i>
+		</span>
+		<p class="modalSccss">
+			Your message has been sent correctly!!!
+		</p>
+		<p class="modalFail">
+			Your message could not been sent!!!
+		</p>
+	</div>
+</div>

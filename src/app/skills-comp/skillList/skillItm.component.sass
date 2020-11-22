@@ -1,0 +1,49 @@
+.skillItm
+    display: flex
+    justify-content: space-between
+    height: 40px
+
+    .skillRepresentationContainer
+        display: block
+
+        .skillSymbolContainer
+            font-size: 21px
+            fill: currentColor
+            color: inherit
+            display: block
+
+            ::ng-deep svg
+                width: 30px
+                height: 30px
+
+        .skillName
+            font-size: 1.2em
+            text-align: right
+            display: none
+
+    .skillLevelContainer
+        .confidenceIcon
+            font-size: 21px
+            fill: currentColor
+            color: inherit
+            display: block
+
+        .confidenceWord
+            font-size: 18px
+            display: none
+
+    &:hover, &:focus
+        .skillRepresentationContainer
+            .skillSymbolContainer
+                display: none
+
+            .skillName
+                display: block
+
+        .skillLevelContainer
+            .confidenceIcon
+                display: none
+
+            .confidenceWord
+                font-size: 18px
+                display: block

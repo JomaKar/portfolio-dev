@@ -1,0 +1,32 @@
+<div class="projectItm">
+	<h2 class="projectName"> {{theProject.name}} </h2>
+
+	<p class="projectDescription">
+		{{theProject.description}}
+	</p>
+
+	<p class="projectTechsList">
+		<span class="projectsTechsWord">Techs:</span> {{projectsInvolvedAsTxt}}
+	</p>
+
+	<div class="iframeContainer backImg" [ngStyle]="{'background-image': 'url(' + srcStamp + theProject.projectImg + ')'}">
+		<!-- <iframe [src]="theProject.iframeUrl | safe" frameborder="0"></iframe> -->
+	</div>
+
+	<div class="infoExtractCont">
+		<ul class="infoExtractList">
+			<li class="infoExtractItm anchorInfo" *ngIf="theProject.link.length">
+				Website: <a [href]="theProject.link | safe" target="_blank"> {{theProject.linkName}}</a>
+			</li>
+			<li class="infoExtractItm roleInfo">
+				Role : {{theProject.role}}
+			</li>
+			<li class="infoExtractItm clientInfo">
+				Client : {{theProject.client}}
+			</li>
+			<li class="infoExtractItm timeInfo">
+				Participation: {{theProject.workingTime}}
+			</li>
+		</ul>
+	</div>
+</div>

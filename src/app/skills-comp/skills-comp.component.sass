@@ -1,0 +1,77 @@
+@import "../../colors"
+    
+.categorieElement
+	padding-left: 0
+	float: left
+
+
+.skillColumn, .categorieElement
+	padding-left: 0
+
+	.categorieHeader
+		height: 45px
+		width: 100%
+		display: flex
+		justify-content: space-between
+		font-size: 21px
+		padding: 8px 10px
+		border-top-left-radius: 10px
+		border-top-right-radius: 10px
+		fill: currentColor
+
+	.categorieBodyList
+		padding: 10px
+		margin-bottom: 20px
+
+	&.Languages
+		padding-left: 0px !important
+
+		.categorieHeader
+			background-color: $skillFieldTitleBlueBack
+			color: white
+
+		.categorieBodyList
+			background-color: $skillsBodyBlueBackground
+			color: white
+
+	&.Design
+		.categorieHeader
+			background-color: $skillFieldTitleYellowBack
+			color: $lettersGrayYellowContrast
+
+		.categorieBodyList
+			background-color: $skillsBodyYellowBackground
+			color: $lettersGrayYellowContrast
+
+	&.Frontend
+		.categorieHeader
+			background-color: $skillFieldTitleRedBack
+			color: white
+
+		.categorieBodyList
+			background-color: $skillsBodyRedBackground
+			color: white
+
+	&.Backend
+		.categorieHeader
+			background-color: $skillFieldTitlePurpleBack
+			color: white
+
+		.categorieBodyList
+			background-color: $skillsBodyPurpleBackground
+			color: white
+
+
+@media(min-width: 768px)
+	.skillColumn, .categorieElement
+		&.leftOnGrid
+			padding-left: 0 !important
+		&.centerOnGrid
+			padding: 0 7.5px !important
+		&.rightOnGrid
+			padding-right: 0 !important
+			padding-left: 15px !important
+
+		&.Languages
+			padding-left: 15px !important
+			padding-right: 0 !important

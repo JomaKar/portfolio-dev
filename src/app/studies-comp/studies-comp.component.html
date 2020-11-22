@@ -1,0 +1,17 @@
+<h1 class="subPageTitle">Educational Qualification</h1>
+
+
+<p class="subPageComment">
+	In front of you there is a list with the courses I have taken as well as my bachelor. You can click in which ever item on the list to see mor information about it. You could also do it on the course name or the instition name too, to be redirected to the course or the instition website.
+</p>
+
+
+<div *ngIf="studiesAreas.length > 1" class="subPageContainer">
+	
+	<div class="studiesListContainer" *ngFor="let area of studiesAreas">
+		<studies-list [actualArea]="area" ></studies-list>
+	</div>
+
+</div>
+
+<router-outlet></router-outlet>
